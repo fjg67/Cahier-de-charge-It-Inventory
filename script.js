@@ -6,18 +6,30 @@
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
-  gsap.registerPlugin(ScrollTrigger);
-  
-  createParticles();
-  initHeroAnimation();
-  initScrollAnimations();
-  initNavbar();
-  initTabs();
+  // Fonctions qui fonctionnent sans GSAP
   initAccordion();
-  initStatsCounters();
   initLightbox();
   initScrollToTop();
   initThemeToggle();
+  initTabs();
+  initNavbar();
+
+  // GSAP - chargement asynchrone pour éviter les erreurs (file://, CORS)
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+    document.body.classList.add('no-gsap');
+    return;
+  }
+
+  try {
+    gsap.registerPlugin(ScrollTrigger);
+    createParticles();
+    initHeroAnimation();
+    initScrollAnimations();
+    initStatsCounters();
+  } catch (e) {
+    console.warn('GSAP animations désactivées:', e);
+    document.body.classList.add('no-gsap');
+  }
 }
 
 // ========== PARTICLES ==========
@@ -43,12 +55,12 @@ function initHeroAnimation() {
 
   const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
   
-  tl.from('.hero-badge', { opacity: 0, y: -20, duration: 0.6 })
-    .from('.hero-title', { opacity: 0, scale: 0.9, duration: 0.8 }, '-=0.3')
-    .from('.hero-subtitle', { opacity: 0, x: -30, duration: 0.6 }, '-=0.4')
-    .from('.hero-description', { opacity: 0, duration: 0.6 }, '-=0.3')
-    .from('.hero-cta', { opacity: 0, y: 30, duration: 0.6 }, '-=0.3')
-    .from('.scroll-indicator', { opacity: 0, duration: 0.5 }, '-=0.2');
+  tl.from('.hero-badge', { y: -15, duration: 0.5 })
+    .from('.hero-title', { scale: 0.95, duration: 0.6 }, '-=0.2')
+    .from('.hero-subtitle', { x: -20, duration: 0.5 }, '-=0.3')
+    .from('.hero-description', { duration: 0.5 }, '-=0.2')
+    .from('.hero-cta', { y: 20, duration: 0.5 }, '-=0.3')
+    .from('.scroll-indicator', { duration: 0.4 }, '-=0.2');
 }
 
 // ========== SCROLL ANIMATIONS ==========
@@ -57,39 +69,27 @@ function initScrollAnimations() {
     gsap.from(section, {
       scrollTrigger: {
         trigger: section,
-        start: 'top 85%',
-        end: 'bottom 20%',
+        start: 'top 90%',
+        end: 'bottom 10%',
         toggleActions: 'play none none reverse'
       },
-      opacity: 0,
-      y: 60,
-      duration: 0.8,
+      y: 40,
+      duration: 0.7,
       ease: 'power2.out',
-      delay: i * 0.1
+      delay: i * 0.05
     });
 
-    gsap.from(section.querySelector('.section-badge'), {
-      scrollTrigger: { trigger: section, start: 'top 85%' },
-      opacity: 0,
-      x: -30,
-      duration: 0.5
-    });
-
-    gsap.from(section.querySelector('.section-title'), {
-      scrollTrigger: { trigger: section, start: 'top 85%' },
-      opacity: 0,
-      x: 30,
-      duration: 0.6,
-      delay: 0.1
-    });
+    const badge = section.querySelector('.section-badge');
+    const title = section.querySelector('.section-title');
+    if (badge) gsap.from(badge, { scrollTrigger: { trigger: section, start: 'top 90%' }, x: -20, duration: 0.5 });
+    if (title) gsap.from(title, { scrollTrigger: { trigger: section, start: 'top 90%' }, x: 20, duration: 0.5, delay: 0.1 });
   });
 
   gsap.from('.intro-card, .scope-card, .info-card, .stat-card', {
-    scrollTrigger: { trigger: '.main-content', start: 'top 80%' },
-    opacity: 0,
-    y: 40,
-    duration: 0.6,
-    stagger: 0.1,
+    scrollTrigger: { trigger: '.main-content', start: 'top 85%' },
+    y: 30,
+    duration: 0.5,
+    stagger: 0.08,
     ease: 'power2.out'
   });
 }
@@ -114,19 +114,31 @@ function initNavbar() {
     lastScroll = y;
   }, { passive: true });
 
-  document.querySelectorAll('.content-section').forEach(section => {
-    ScrollTrigger.create({
-      trigger: section,
-      start: 'top 60%',
-      end: 'bottom 40%',
-      onEnter: () => setActiveNav(section.id),
-      onEnterBack: () => setActiveNav(section.id)
-    });
-  });
-
   function setActiveNav(id) {
     navLinks.forEach(link => {
       link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+    });
+  }
+
+  if (typeof ScrollTrigger !== 'undefined') {
+    document.querySelectorAll('.content-section').forEach(section => {
+      ScrollTrigger.create({
+        trigger: section,
+        start: 'top 60%',
+        end: 'bottom 40%',
+        onEnter: () => setActiveNav(section.id),
+        onEnterBack: () => setActiveNav(section.id)
+      });
+    });
+  } else {
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('.content-section');
+      let current = '';
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 150 && rect.bottom >= 150) current = section.id;
+      });
+      if (current) setActiveNav(current);
     });
   }
 }

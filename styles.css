@@ -283,12 +283,17 @@ body {
   font-weight: 900;
   line-height: 1.1;
   margin-bottom: 0.5rem;
+  color: #fff;
   background: linear-gradient(120deg, #fff 0%, var(--primary) 50%, #fff 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: gradient-shift 3s ease infinite;
+}
+
+body.no-gsap .hero-title {
+  -webkit-text-fill-color: white;
 }
 
 @keyframes gradient-shift {
