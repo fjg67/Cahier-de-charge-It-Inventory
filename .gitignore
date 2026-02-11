@@ -1,0 +1,9 @@
+# Ignorer les fichiers temporaires
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Garder le dossier assets vide dans le repo (images à copier localement)
+# Décommentez la ligne suivante si vous ne voulez pas versionner les images :
+# assets/*.png
