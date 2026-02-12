@@ -89,7 +89,7 @@ function initScrollAnimations() {
     if (title) gsap.from(title, { scrollTrigger: { trigger: section, start: 'top 90%' }, x: 20, duration: 0.5, delay: 0.1 });
   });
 
-  gsap.from('.intro-card, .scope-card, .info-card, .stat-card', {
+  gsap.from('.intro-card, .scope-card, .req-card, .kpi-card, .benefit-category', {
     scrollTrigger: { trigger: '.main-content', start: 'top 85%' },
     y: 30,
     duration: 0.5,
@@ -205,8 +205,8 @@ function initAccordion() {
 
 // ========== STATS COUNTERS ==========
 function initStatsCounters() {
-  const statCards = document.querySelectorAll('.stat-card');
-  statCards.forEach(card => {
+  const kpiCards = document.querySelectorAll('.kpi-card');
+  kpiCards.forEach(card => {
     ScrollTrigger.create({
       trigger: card,
       start: 'top 90%',
@@ -216,7 +216,7 @@ function initStatsCounters() {
 }
 
 function animateCounter(card) {
-  const el = card.querySelector('.stat-number');
+  const el = card.querySelector('.kpi-value');
   if (!el || el.dataset.animated) return;
   el.dataset.animated = 'true';
 
