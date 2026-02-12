@@ -25,6 +25,7 @@
         <li><a href="#introduction">Introduction</a></li>
         <li><a href="#perimetre">Périmètre</a></li>
         <li><a href="#fonctionnel">Fonctionnel</a></li>
+        <li><a href="#comparatif">Comparatif</a></li>
         <li><a href="#technique">Technique</a></li>
         <li><a href="#benefices">Bénéfices</a></li>
         <li><a href="#evolutions">Évolutions</a></li>
@@ -246,7 +247,7 @@
               <div class="feature-text">
                 <h3>Alertes, Sync & Export</h3>
                 <p><strong>3.6 Alertes stock :</strong> Détection automatique si stock ≤ stock minimum. Objectif : anticiper les ruptures.</p>
-                <p><strong>3.7 Synchronisation :</strong> Supabase, indicateur d'état, sync manuelle, données en attente.</p>
+                <p><strong>3.7 Synchronisation :</strong> Base de données sur le réseau entreprise, indicateur d'état, sync manuelle, données en attente.</p>
                 <p><strong>3.8 Export :</strong> CSV (fiche + historique), exploitation Excel.</p>
               </div>
               <div class="feature-mockups">
@@ -255,6 +256,345 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Section 3.9: Analyse Comparative du Marché -->
+    <section class="content-section" id="comparatif">
+      <div class="section-badge"><span class="badge-icon">⚖️</span><span class="badge-text">Analyse Comparative</span></div>
+      <h2 class="section-title"><span class="title-number">3.9</span><span class="title-text">StockPro face à la Concurrence</span></h2>
+      <p class="comparative-intro">StockPro se positionne comme une solution moderne et complète face aux acteurs établis du marché. Voici une analyse objective des fonctionnalités, avantages et limites par rapport à Timly et Stock et Inventaire Simple.</p>
+
+      <!-- 1. VUE D'ENSEMBLE (CARTES CONCURRENTS) -->
+      <h3 class="comparative-subtitle">Acteurs du Marché</h3>
+      <div class="competitors-grid">
+        <div class="competitor-card stockpro-card featured">
+          <span class="card-badge">Notre Solution</span>
+          <div class="card-logo">
+            <span class="logo-icon">📦</span>
+            <span class="logo-text">StockPro</span>
+          </div>
+          <p class="card-tagline">Solution mobile moderne spécialisée pour le stock IT</p>
+          <div class="card-stats">
+            <span class="stat-item">📱 Mobile First</span>
+            <span class="stat-item">🔧 IT Focused</span>
+            <span class="stat-item">☁️ Cloud Native</span>
+          </div>
+          <div class="card-price">
+            <span class="price-label">Modèle</span>
+            <span class="price-value">Sur mesure</span>
+          </div>
+        </div>
+        <div class="competitor-card">
+          <div class="card-logo">
+            <span class="logo-icon">⏱️</span>
+            <span class="logo-text">Timly</span>
+          </div>
+          <p class="card-tagline">Plateforme SaaS complète de gestion d'équipements</p>
+          <div class="card-stats">
+            <span class="stat-item">🌐 Web + Mobile</span>
+            <span class="stat-item">📊 Multi-industries</span>
+            <span class="stat-item">👥 Multi-users</span>
+          </div>
+          <div class="card-price">
+            <span class="price-label">À partir de</span>
+            <span class="price-value">49€/mois</span>
+          </div>
+          <a href="https://timly.com" target="_blank" rel="noopener" class="card-link">Voir le site →</a>
+        </div>
+        <div class="competitor-card">
+          <div class="card-logo">
+            <span class="logo-icon">📋</span>
+            <span class="logo-text">Stock et Inventaire Simple</span>
+          </div>
+          <p class="card-tagline">Application mobile légère pour gestion de stock basique</p>
+          <div class="card-stats">
+            <span class="stat-item">📱 Mobile Only</span>
+            <span class="stat-item">💡 Simplicité</span>
+            <span class="stat-item">📴 Offline</span>
+          </div>
+          <div class="card-price">
+            <span class="price-label">Modèle</span>
+            <span class="price-value">Gratuit + Premium</span>
+          </div>
+          <a href="https://play.google.com/store/apps/details?id=com.simpleinventory" target="_blank" rel="noopener" class="card-link">Google Play Store →</a>
+        </div>
+      </div>
+
+      <!-- 2. TABLEAU COMPARATIF -->
+      <h3 class="comparative-subtitle">Comparatif des Fonctionnalités</h3>
+      <div class="table-filters">
+        <button type="button" class="filter-btn active" data-category="all">Toutes les fonctionnalités</button>
+        <button type="button" class="filter-btn" data-category="base">Fonctions de base</button>
+        <button type="button" class="filter-btn" data-category="advanced">Fonctions avancées</button>
+        <button type="button" class="filter-btn" data-category="technical">Aspects techniques</button>
+      </div>
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th class="feature-column">Fonctionnalité</th>
+              <th class="app-column stockpro-column"><div class="column-header"><span class="app-icon">📦</span><span class="app-name">StockPro</span></div></th>
+              <th class="app-column"><div class="column-header"><span class="app-icon">⏱️</span><span class="app-name">Timly</span></div></th>
+              <th class="app-column"><div class="column-header"><span class="app-icon">📋</span><span class="app-name">Inventaire Simple</span></div></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="category-row"><td colspan="4"><div class="category-header">📦 Gestion de Base</div></td></tr>
+            <tr data-category="base">
+              <td class="feature-name"><span>Gestion des articles</span><button type="button" class="info-btn" aria-label="Info" title="Liste, recherche, filtres, tri">ℹ️</button></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">Complète</span></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">Complète</span></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">Basique</span></td>
+            </tr>
+            <tr data-category="base">
+              <td class="feature-name"><span>Scan code-barres</span><button type="button" class="info-btn" aria-label="Info" title="Caméra ou scanner externe">ℹ️</button></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label highlight">Natif + Scanner externe</span></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">Natif uniquement</span></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">Natif uniquement</span></td>
+            </tr>
+            <tr data-category="base">
+              <td class="feature-name"><span>Gestion multi-sites</span><button type="button" class="info-btn" aria-label="Info" title="Plusieurs emplacements">ℹ️</button></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label highlight">Natif</span></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">Premium</span></td>
+              <td class="feature-value app-column"><span class="cross-icon">✗</span><span class="value-label">Non disponible</span></td>
+            </tr>
+            <tr data-category="base">
+              <td class="feature-name"><span>Alertes de stock faible</span><button type="button" class="info-btn" aria-label="Info" title="Détection automatique">ℹ️</button></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">Automatique</span></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">Automatique</span></td>
+              <td class="feature-value app-column"><span class="value-label">~</span><span class="value-label">Manuel</span></td>
+            </tr>
+            <tr data-category="base">
+              <td class="feature-name"><span>Historique des mouvements</span><button type="button" class="info-btn" aria-label="Info" title="Traçabilité complète">ℹ️</button></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">Complet + Export</span></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">Complet</span></td>
+              <td class="feature-value app-column"><span class="value-label">~</span><span class="value-label">Limité</span></td>
+            </tr>
+            <tr class="category-row"><td colspan="4"><div class="category-header">⚡ Fonctionnalités Avancées</div></td></tr>
+            <tr data-category="advanced">
+              <td class="feature-name"><span>Authentification multi-utilisateurs</span><button type="button" class="info-btn" aria-label="Info" title="Profils et rôles">ℹ️</button></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">Natif + Profils</span></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">Natif + Rôles</span></td>
+              <td class="feature-value app-column"><span class="cross-icon">✗</span><span class="value-label">Non</span></td>
+            </tr>
+            <tr data-category="advanced">
+              <td class="feature-name"><span>Synchronisation cloud</span><button type="button" class="info-btn" aria-label="Info" title="Base de données">ℹ️</button></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label highlight">Temps réel (réseau entreprise)</span></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">Temps réel</span></td>
+              <td class="feature-value app-column"><span class="value-label">~</span><span class="value-label">Export manuel</span></td>
+            </tr>
+            <tr data-category="advanced">
+              <td class="feature-name"><span>Export de données</span><button type="button" class="info-btn" aria-label="Info" title="CSV, Excel">ℹ️</button></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">CSV</span></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">CSV, Excel, PDF</span></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">CSV</span></td>
+            </tr>
+            <tr data-category="advanced">
+              <td class="feature-name"><span>Dashboard analytique</span><button type="button" class="info-btn" aria-label="Info" title="Graphiques et KPIs">ℹ️</button></td>
+              <td class="feature-value app-column"><span class="value-label">~</span><span class="value-label">Basique (KPIs)</span></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">Avancé (Graphiques)</span></td>
+              <td class="feature-value app-column"><span class="cross-icon">✗</span><span class="value-label">Non</span></td>
+            </tr>
+            <tr data-category="advanced">
+              <td class="feature-name"><span>Gestion des fournisseurs</span><button type="button" class="info-btn" aria-label="Info" title="Catalogues fournisseurs">ℹ️</button></td>
+              <td class="feature-value app-column"><span class="roadmap-icon">🔜</span><span class="value-label">Roadmap</span></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">Complet</span></td>
+              <td class="feature-value app-column"><span class="cross-icon">✗</span><span class="value-label">Non</span></td>
+            </tr>
+            <tr data-category="advanced">
+              <td class="feature-name"><span>Commandes automatiques</span><button type="button" class="info-btn" aria-label="Info" title="Réapprovisionnement">ℹ️</button></td>
+              <td class="feature-value app-column"><span class="roadmap-icon">🔜</span><span class="value-label">Roadmap</span></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">Oui</span></td>
+              <td class="feature-value app-column"><span class="cross-icon">✗</span><span class="value-label">Non</span></td>
+            </tr>
+            <tr data-category="advanced">
+              <td class="feature-name"><span>API / Intégrations tierces</span><button type="button" class="info-btn" aria-label="Info" title="Webhooks, REST">ℹ️</button></td>
+              <td class="feature-value app-column"><span class="roadmap-icon">🔜</span><span class="value-label">Roadmap</span></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">API REST complète</span></td>
+              <td class="feature-value app-column"><span class="cross-icon">✗</span><span class="value-label">Non</span></td>
+            </tr>
+            <tr class="category-row"><td colspan="4"><div class="category-header">🔧 Aspects Techniques</div></td></tr>
+            <tr data-category="technical">
+              <td class="feature-name"><span>Plateforme</span><button type="button" class="info-btn" aria-label="Info" title="OS supportés">ℹ️</button></td>
+              <td class="feature-value app-column"><span class="value-label">Android natif</span></td>
+              <td class="feature-value app-column"><span class="value-label">Web + iOS + Android</span></td>
+              <td class="feature-value app-column"><span class="value-label">iOS + Android</span></td>
+            </tr>
+            <tr data-category="technical">
+              <td class="feature-name"><span>Mode hors ligne</span><button type="button" class="info-btn" aria-label="Info" title="Sans connexion">ℹ️</button></td>
+              <td class="feature-value app-column"><span class="value-label">~</span><span class="value-label">Partiel (sync auto)</span></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">Complet</span></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">Complet</span></td>
+            </tr>
+            <tr data-category="technical">
+              <td class="feature-name"><span>Compatible matériel durci</span><button type="button" class="info-btn" aria-label="Info" title="Zebra, etc.">ℹ️</button></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label highlight">Oui (Zebra TC22)</span></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">Oui</span></td>
+              <td class="feature-value app-column"><span class="value-label">~</span><span class="value-label">Non testé</span></td>
+            </tr>
+            <tr data-category="technical">
+              <td class="feature-name"><span>Sécurité des données</span><button type="button" class="info-btn" aria-label="Info" title="Chiffrement">ℹ️</button></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">Chiffrement + Auth</span></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">RGPD + ISO 27001</span></td>
+              <td class="feature-value app-column"><span class="value-label">~</span><span class="value-label">Basique</span></td>
+            </tr>
+            <tr data-category="technical">
+              <td class="feature-name"><span>Spécialisation IT</span><button type="button" class="info-btn" aria-label="Info" title="Focus matériel informatique">ℹ️</button></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label highlight">Oui (focus IT)</span></td>
+              <td class="feature-value app-column"><span class="value-label">~</span><span class="value-label">Multi-secteurs</span></td>
+              <td class="feature-value app-column"><span class="cross-icon">✗</span><span class="value-label">Générique</span></td>
+            </tr>
+            <tr data-category="technical">
+              <td class="feature-name"><span>Personnalisation</span><button type="button" class="info-btn" aria-label="Info" title="Sur mesure">ℹ️</button></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label highlight">Sur mesure</span></td>
+              <td class="feature-value app-column"><span class="value-label">~</span><span class="value-label">Limitée</span></td>
+              <td class="feature-value app-column"><span class="cross-icon">✗</span><span class="value-label">Aucune</span></td>
+            </tr>
+            <tr data-category="technical">
+              <td class="feature-name"><span>Support technique</span><button type="button" class="info-btn" aria-label="Info" title="Assistance">ℹ️</button></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">Direct & Réactif</span></td>
+              <td class="feature-value app-column"><span class="check-icon">✓</span><span class="value-label">Email + Chat</span></td>
+              <td class="feature-value app-column"><span class="value-label">~</span><span class="value-label">FAQ uniquement</span></td>
+            </tr>
+            <tr data-category="technical">
+              <td class="feature-name"><span>Modèle tarifaire</span><button type="button" class="info-btn" aria-label="Info" title="Prix">ℹ️</button></td>
+              <td class="feature-value app-column"><span class="value-label">Sur mesure / Licence</span></td>
+              <td class="feature-value app-column"><span class="value-label">À partir de 49€/mois</span></td>
+              <td class="feature-value app-column"><span class="value-label">Gratuit + Premium</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-legend">
+        <span class="legend-item"><span class="check-icon">✓</span> Disponible / Complet</span>
+        <span class="legend-item"><span>~</span> Partiel / Limité</span>
+        <span class="legend-item"><span class="cross-icon">✗</span> Non disponible</span>
+        <span class="legend-item"><span class="roadmap-icon">🔜</span> En développement</span>
+      </div>
+
+      <!-- 3. ANALYSE DÉTAILLÉE -->
+      <h3 class="comparative-subtitle">Analyse Détaillée</h3>
+      <div class="analysis-tabs">
+        <button type="button" class="analysis-tab active" data-competitor="timly">Timly</button>
+        <button type="button" class="analysis-tab" data-competitor="simple">Stock et Inventaire Simple</button>
+      </div>
+      <div id="analysis-timly" class="competitor-analysis active">
+        <div class="analysis-grid">
+          <div class="analysis-card strengths-card">
+            <h4 class="card-header"><span class="header-icon">💪</span> Points Forts de Timly</h4>
+            <ul class="analysis-list">
+              <li class="list-item"><span class="item-icon">✓</span><div class="item-content"><strong>Solution mature et éprouvée</strong><p>Plusieurs années d'existence, base utilisateurs établie</p></div></li>
+              <li class="list-item"><span class="item-icon">✓</span><div class="item-content"><strong>Dashboard analytique avancé</strong><p>Graphiques, rapports personnalisés, KPIs détaillés</p></div></li>
+              <li class="list-item"><span class="item-icon">✓</span><div class="item-content"><strong>Multi-plateforme complet</strong><p>Interface web, application mobile iOS/Android</p></div></li>
+              <li class="list-item"><span class="item-icon">✓</span><div class="item-content"><strong>Fonctionnalités étendues</strong><p>Gestion fournisseurs, commandes automatiques, API</p></div></li>
+              <li class="list-item"><span class="item-icon">✓</span><div class="item-content"><strong>Support professionnel</strong><p>Documentation complète, support réactif</p></div></li>
+            </ul>
+          </div>
+          <div class="analysis-card weaknesses-card">
+            <h4 class="card-header"><span class="header-icon">⚠️</span> Limites de Timly</h4>
+            <ul class="analysis-list">
+              <li class="list-item"><span class="item-icon">✗</span><div class="item-content"><strong>Coût récurrent élevé</strong><p>À partir de 49€/mois, augmente selon fonctionnalités</p></div></li>
+              <li class="list-item"><span class="item-icon">✗</span><div class="item-content"><strong>Non spécialisé IT</strong><p>Solution générique multi-secteurs, pas d'optimisation IT</p></div></li>
+              <li class="list-item"><span class="item-icon">✗</span><div class="item-content"><strong>Complexité excessive</strong><p>Courbe d'apprentissage importante, trop de fonctions</p></div></li>
+              <li class="list-item"><span class="item-icon">✗</span><div class="item-content"><strong>Personnalisation limitée</strong><p>Modèle SaaS rigide, peu adaptable aux besoins spécifiques</p></div></li>
+              <li class="list-item"><span class="item-icon">✗</span><div class="item-content"><strong>Dépendance au cloud</strong><p>Nécessite connexion permanente, mode offline limité</p></div></li>
+            </ul>
+          </div>
+        </div>
+        <div class="direct-comparison">
+          <h5>Où StockPro se différencie :</h5>
+          <div class="comparison-points">
+            <div class="point-card advantage"><span class="point-icon">🎯</span><h6>Spécialisation IT</h6><p>Contrairement à Timly qui est multi-secteurs, StockPro est spécifiquement conçu pour le matériel informatique avec des workflows optimisés.</p></div>
+            <div class="point-card advantage"><span class="point-icon">💰</span><h6>Modèle économique flexible</h6><p>Pas d'abonnement mensuel récurrent. Licence sur mesure adaptée aux besoins réels de l'entreprise.</p></div>
+            <div class="point-card advantage"><span class="point-icon">🔧</span><h6>Personnalisation totale</h6><p>Application développée en interne, modifiable selon vos besoins spécifiques sans dépendre d'un éditeur.</p></div>
+            <div class="point-card advantage"><span class="point-icon">⚡</span><h6>Simplicité d'utilisation</h6><p>Interface épurée, focus sur l'essentiel pour une prise en main immédiate par les techniciens.</p></div>
+          </div>
+        </div>
+      </div>
+      <div id="analysis-simple" class="competitor-analysis">
+        <div class="analysis-grid">
+          <div class="analysis-card strengths-card">
+            <h4 class="card-header"><span class="header-icon">💪</span> Points Forts de Stock et Inventaire Simple</h4>
+            <ul class="analysis-list">
+              <li class="list-item"><span class="item-icon">✓</span><div class="item-content"><strong>Simplicité extrême</strong><p>Interface minimaliste, prise en main en quelques minutes</p></div></li>
+              <li class="list-item"><span class="item-icon">✓</span><div class="item-content"><strong>Gratuité</strong><p>Version de base gratuite, faible coût pour Premium</p></div></li>
+              <li class="list-item"><span class="item-icon">✓</span><div class="item-content"><strong>Mode offline complet</strong><p>Fonctionne totalement sans connexion internet</p></div></li>
+              <li class="list-item"><span class="item-icon">✓</span><div class="item-content"><strong>Léger et rapide</strong><p>Application peu gourmande, performante sur tout hardware</p></div></li>
+            </ul>
+          </div>
+          <div class="analysis-card weaknesses-card">
+            <h4 class="card-header"><span class="header-icon">⚠️</span> Limites de Stock et Inventaire Simple</h4>
+            <ul class="analysis-list">
+              <li class="list-item"><span class="item-icon">✗</span><div class="item-content"><strong>Fonctionnalités très limitées</strong><p>Pas de multi-utilisateurs, pas de multi-sites, basique</p></div></li>
+              <li class="list-item"><span class="item-icon">✗</span><div class="item-content"><strong>Aucune synchronisation cloud</strong><p>Export/import manuel uniquement, pas de sauvegarde auto</p></div></li>
+              <li class="list-item"><span class="item-icon">✗</span><div class="item-content"><strong>Pas de traçabilité avancée</strong><p>Historique limité, pas de suivi par utilisateur</p></div></li>
+              <li class="list-item"><span class="item-icon">✗</span><div class="item-content"><strong>Non adapté aux environnements pros</strong><p>Pas de gestion de permissions, sécurité basique</p></div></li>
+              <li class="list-item"><span class="item-icon">✗</span><div class="item-content"><strong>Évolutions incertaines</strong><p>Application individuelle, pas de roadmap claire</p></div></li>
+              <li class="list-item"><span class="item-icon">✗</span><div class="item-content"><strong>Support inexistant</strong><p>Pas d'assistance technique, documentation minimale</p></div></li>
+            </ul>
+          </div>
+        </div>
+        <div class="direct-comparison">
+          <h5>Où StockPro se différencie :</h5>
+          <div class="comparison-points">
+            <div class="point-card advantage"><span class="point-icon">👥</span><h6>Multi-utilisateurs natif</h6><p>Gestion complète des utilisateurs avec authentification, profils et traçabilité des opérations par personne.</p></div>
+            <div class="point-card advantage"><span class="point-icon">☁️</span><h6>Synchronisation cloud temps réel</h6><p>Sauvegarde automatique sur base réseau entreprise, accès depuis plusieurs terminaux avec sécurité garantie.</p></div>
+            <div class="point-card advantage"><span class="point-icon">🏢</span><h6>Gestion multi-sites</h6><p>Parfait pour les entreprises avec plusieurs emplacements, transferts inter-sites facilités.</p></div>
+            <div class="point-card advantage"><span class="point-icon">📊</span><h6>Fonctionnalités professionnelles</h6><p>Dashboard avec KPIs, alertes automatiques, export CSV, historique complet des mouvements.</p></div>
+            <div class="point-card advantage"><span class="point-icon">🛠️</span><h6>Support et évolution</h6><p>Application maintenue et évoluée selon vos besoins, support technique direct, roadmap claire.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. MATRICE DE POSITIONNEMENT -->
+      <h3 class="comparative-subtitle">Positionnement sur le Marché</h3>
+      <p class="matrix-intro">Visualisation du positionnement de chaque solution selon deux axes : <strong>Spécialisation IT</strong> (horizontal) et <strong>Sophistication des Fonctionnalités</strong> (vertical).</p>
+      <div class="matrix-container">
+        <div class="matrix-axis horizontal-axis">
+          <span class="axis-label">Généraliste</span>
+          <span class="axis-label">Spécialisé IT</span>
+        </div>
+        <div class="matrix-axis vertical-axis">
+          <span class="axis-label">Avancé</span>
+          <span class="axis-label">Basique</span>
+        </div>
+        <div class="matrix-quadrants">
+          <div class="quadrant"><span class="quadrant-label">Leader Généraliste</span></div>
+          <div class="quadrant"><span class="quadrant-label">Leader Spécialisé</span></div>
+          <div class="quadrant"><span class="quadrant-label">Niche Basique</span></div>
+          <div class="quadrant"><span class="quadrant-label">Challenger</span></div>
+        </div>
+        <div class="matrix-points">
+          <div class="matrix-point stockpro-point" style="left: 82%; top: 25%;"><div class="point-marker">📦</div><span class="point-label">StockPro</span><span class="point-details">Spécialisé IT + Fonctionnalités Pro</span></div>
+          <div class="matrix-point" style="left: 22%; top: 18%;"><div class="point-marker">⏱️</div><span class="point-label">Timly</span><span class="point-details">Généraliste + Très avancé</span></div>
+          <div class="matrix-point" style="left: 18%; top: 75%;"><div class="point-marker">📋</div><span class="point-label">Inventaire Simple</span><span class="point-details">Généraliste + Basique</span></div>
+        </div>
+      </div>
+      <div class="matrix-legend">
+        <div class="legend-section"><h5>📦 StockPro - Quadrant "Leader Spécialisé"</h5><p>Positionnement optimal : Haute spécialisation IT avec fonctionnalités professionnelles. StockPro offre le meilleur équilibre pour une entreprise IT recherchant une solution sur-mesure sans complexité excessive.</p></div>
+        <div class="legend-section"><h5>⏱️ Timly - Quadrant "Leader Généraliste"</h5><p>Solution complète mais non spécialisée. Excellente pour multi-secteurs mais avec complexité et coûts supérieurs pour un usage IT pur.</p></div>
+        <div class="legend-section"><h5>📋 Inventaire Simple - Quadrant "Niche Basique"</h5><p>Très accessible mais limité en fonctionnalités. Adapté aux très petites structures ou usages personnels, inadapté aux environnements professionnels.</p></div>
+      </div>
+
+      <!-- 5. SYNTHÈSE DES AVANTAGES -->
+      <h3 class="comparative-subtitle">Pourquoi Choisir StockPro ?</h3>
+      <div class="advantages-hero">
+        <p class="hero-text">StockPro combine le meilleur des deux mondes : <span class="highlight">la spécialisation IT</span> de solutions nichées avec <span class="highlight">les fonctionnalités professionnelles</span> des plateformes complètes, tout en évitant leur complexité et leurs coûts récurrents.</p>
+      </div>
+      <div class="advantages-grid">
+        <div class="advantage-card"><span class="card-number">01</span><span class="card-icon">🎯</span><h4>Spécialisation IT</h4><p>Conçu spécifiquement pour le stock informatique avec des workflows optimisés, des catégories adaptées et une ergonomie pensée pour les techniciens IT.</p><div class="card-comparison"><span class="vs-label">vs Timly :</span><span class="vs-text">Généraliste multi-secteurs</span></div></div>
+        <div class="advantage-card"><span class="card-number">02</span><span class="card-icon">💰</span><h4>Modèle Économique Flexible</h4><p>Pas d'abonnement mensuel récurrent. Solution sur-mesure avec licence adaptée à vos besoins réels sans frais cachés ni augmentations surprises.</p><div class="card-comparison"><span class="vs-label">vs Timly :</span><span class="vs-text">À partir de 49€/mois + options</span></div></div>
+        <div class="advantage-card"><span class="card-number">03</span><span class="card-icon">🔧</span><h4>Personnalisation Totale</h4><p>Application développée en interne, entièrement modifiable et extensible selon vos besoins spécifiques. Vous gardez le contrôle total.</p><div class="card-comparison"><span class="vs-label">vs Timly :</span><span class="vs-text">Personnalisation limitée (SaaS)</span></div></div>
+        <div class="advantage-card"><span class="card-number">04</span><span class="card-icon">👥</span><h4>Multi-Utilisateurs Natif</h4><p>Authentification sécurisée, gestion de profils, traçabilité complète des opérations par utilisateur dès la version de base.</p><div class="card-comparison"><span class="vs-label">vs Inventaire Simple :</span><span class="vs-text">Mono-utilisateur</span></div></div>
+        <div class="advantage-card"><span class="card-number">05</span><span class="card-icon">☁️</span><h4>Cloud Moderne & Sécurisé</h4><p>Synchronisation temps réel avec la base réseau entreprise, sauvegarde automatique, accès depuis plusieurs terminaux avec sécurité renforcée.</p><div class="card-comparison"><span class="vs-label">vs Inventaire Simple :</span><span class="vs-text">Export/import manuel uniquement</span></div></div>
+        <div class="advantage-card"><span class="card-number">06</span><span class="card-icon">🏢</span><h4>Multi-Sites Intégré</h4><p>Gestion native de plusieurs emplacements avec transferts inter-sites, vue consolidée et séparation des données par site.</p><div class="card-comparison"><span class="vs-label">vs Inventaire Simple :</span><span class="vs-text">Non disponible</span></div></div>
+        <div class="advantage-card"><span class="card-number">07</span><span class="card-icon">⚡</span><h4>Simplicité d'Utilisation</h4><p>Interface épurée et intuitive, focus sur l'essentiel, prise en main immédiate sans formation longue ni courbe d'apprentissage complexe.</p><div class="card-comparison"><span class="vs-label">vs Timly :</span><span class="vs-text">Interface chargée, formation nécessaire</span></div></div>
+        <div class="advantage-card"><span class="card-number">08</span><span class="card-icon">📱</span><h4>Mobile First</h4><p>Application native Android optimisée pour terminaux durcis (Zebra TC22), scan code-barres natif et externe, ergonomie terrain.</p><div class="card-comparison"><span class="vs-label">vs Timly :</span><span class="vs-text">Web-first, app mobile secondaire</span></div></div>
+        <div class="advantage-card"><span class="card-number">09</span><span class="card-icon">🛠️</span><h4>Support Direct & Évolutions</h4><p>Assistance technique directe, évolutions continues selon vos retours, roadmap claire et transparente adaptée à vos besoins métier.</p><div class="card-comparison"><span class="vs-label">vs Inventaire Simple :</span><span class="vs-text">Aucun support</span></div></div>
+      </div>
+      <div class="advantages-cta">
+        <div class="cta-content"><h4>StockPro : La Solution Idéale pour la Gestion de Stock IT</h4><p>Une application moderne, spécialisée et professionnelle, sans les inconvénients des solutions généralistes ou basiques.</p><div class="cta-stats"><div class="stat"><span class="stat-value">100%</span><span class="stat-label">Spécialisé IT</span></div><div class="stat"><span class="stat-value">0€</span><span class="stat-label">Abonnement mensuel</span></div><div class="stat"><span class="stat-value">✓</span><span class="stat-label">Sur-mesure</span></div></div></div>
       </div>
     </section>
 
@@ -267,15 +607,15 @@
           <div class="layer-header"><span class="layer-icon">📱</span><h4>Frontend</h4></div>
           <div class="layer-items">
             <div class="tech-bubble">Application Android</div>
-            <div class="tech-bubble">Android 13</div>
+            <div class="tech-bubble">Android 16</div>
             <div class="tech-bubble">Smartphones durcis</div>
           </div>
         </div>
         <div class="arch-connector"></div>
         <div class="arch-layer backend-layer">
-          <div class="layer-header"><span class="layer-icon">☁️</span><h4>Backend</h4></div>
+          <div class="layer-header"><span class="layer-icon">🏢</span><h4>Backend</h4></div>
           <div class="layer-items">
-            <div class="tech-bubble">Supabase</div>
+            <div class="tech-bubble">Base de données sur le réseau entreprise</div>
             <div class="tech-bubble">PostgreSQL</div>
           </div>
         </div>
@@ -331,7 +671,7 @@
             <span class="phase-status">✨ En cours</span>
           </div>
           <h4>Application mobile MVP</h4>
-          <p>Application Android complète : gestion articles, scan, mouvements, synchronisation Supabase</p>
+          <p>Application Android complète : gestion articles, scan, mouvements, synchronisation avec la base de données entreprise</p>
           <ul class="roadmap-features">
             <li>🔐 Authentification multi-utilisateurs</li>
             <li>📷 Scan code-barres</li>

@@ -15,6 +15,7 @@ function init() {
   initThemeToggle();
   initTabs();
   initNavbar();
+  initComparativeSection();
 
   // GSAP - chargement asynchrone pour éviter les erreurs (file://, CORS)
   if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
@@ -28,6 +29,7 @@ function init() {
     initHeroAnimation();
     initScrollAnimations();
     initStatsCounters();
+    initComparativeAnimations();
   } catch (e) {
     console.warn('GSAP animations désactivées:', e);
     document.body.classList.add('no-gsap');
@@ -328,6 +330,85 @@ function initThemeToggle() {
   });
 
   updateIcon();
+}
+
+// ========== SECTION COMPARATIVE ==========
+function initComparativeSection() {
+  // Filtres du tableau
+  const filterButtons = document.querySelectorAll('.filter-btn[data-category]');
+  const tableRows = document.querySelectorAll('.comparison-table tbody tr[data-category]');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.dataset.category;
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      tableRows.forEach(row => {
+        if (category === 'all' || row.dataset.category === category) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Tabs analyse détaillée
+  const analysisTabs = document.querySelectorAll('.analysis-tab');
+  const analysisContents = document.querySelectorAll('.competitor-analysis');
+
+  analysisTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const competitor = tab.dataset.competitor;
+      analysisTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      analysisContents.forEach(content => {
+        content.classList.remove('active');
+      });
+      const target = document.getElementById('analysis-' + competitor);
+      if (target) target.classList.add('active');
+    });
+  });
+}
+
+function initComparativeAnimations() {
+  if (typeof gsap === 'undefined') return;
+  const cards = document.querySelectorAll('.competitor-card');
+  const advantageCards = document.querySelectorAll('.advantage-card');
+  const matrixPoints = document.querySelectorAll('.matrix-point');
+
+  if (cards.length) {
+    gsap.from(cards, {
+      scrollTrigger: { trigger: '.competitors-grid', start: 'top 85%' },
+      opacity: 0,
+      y: 40,
+      stagger: 0.15,
+      duration: 0.7,
+      ease: 'power2.out'
+    });
+  }
+
+  if (advantageCards.length) {
+    gsap.from(advantageCards, {
+      scrollTrigger: { trigger: '.advantages-grid', start: 'top 85%' },
+      opacity: 0,
+      y: 40,
+      stagger: 0.08,
+      duration: 0.6,
+      ease: 'power2.out'
+    });
+  }
+
+  if (matrixPoints.length) {
+    gsap.from(matrixPoints, {
+      scrollTrigger: { trigger: '.matrix-container', start: 'top 85%' },
+      scale: 0,
+      opacity: 0,
+      stagger: 0.15,
+      duration: 0.6,
+      ease: 'back.out(1.5)'
+    });
+  }
 }
 
 document.addEventListener('keydown', (e) => {
